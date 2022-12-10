@@ -1,0 +1,108 @@
+// Base styles for entire app
+
+:root {
+    --pure-white: #ffffff;
+    --primary-color: #83919f;
+    --secondary-color: #d0dde9;
+    --tertiary-color: #edf0f8;
+    --accent-color: #2A7D2E;
+    --heading-color: rgba(0, 0, 0, 0.9);
+    --text-color: #444444;
+    --box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    font-size: 15px;
+    position: relative;
+    height: 100%;
+    width: 100%;
+    overflow-x: hidden;
+
+    @media only screen and (max-width: 1023px) {
+        &.is-active {
+            position: fixed;
+        }
+    }
+
+    @media screen and (min-width: 1300px) {
+        font-size: 20px;
+    }
+
+    @media screen and (min-width: 2000px) {
+        font-size: 1vw;
+    }
+
+    &.swiper-fixed {
+        overflow: hidden;
+        overflow-y: hidden;
+    }
+}
+
+
+main {
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+}
+
+// other base styles
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin: 0;
+    color: var(--heading-color);
+}
+
+ul li {
+    color: var(--text-color);
+}
+
+p {
+    color: var(--text-color);
+    line-height: 1.2;
+}
+
+a,
+button {
+    &:hover {
+        cursor: pointer;
+    }
+}
+
+.btn {
+    cursor: pointer;
+    padding: calc(10/20)*1em calc(15/20)*1em;
+    background-color: var(--primary-color);
+    border: 0;
+    color: white;
+    text-decoration: none;
+    margin: .5em;
+    transition: all .5s;
+
+    &:hover {
+        background-color: rgba(0, 0, 0, 0.9);
+        color: #fff;
+    }
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+    -moz-appearance: textfield;
+}
