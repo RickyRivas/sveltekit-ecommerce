@@ -4,6 +4,9 @@
 	let cartTotal: number = 0;
 	let loading = false;
 
+	// import session
+	import { page } from '$app/stores';
+
 	const removefromCart = (id: number) => {
 		$cart = $cart.filter((p) => p.id !== id);
 		if (!$cart.length) {
@@ -95,8 +98,15 @@
 				{$cart.length}
 			</span>
 		</button>
+
+		{#if !$page.data.session}
+			<a href="">Sign in</a>
+		{:else}
+			<a href="">Sign Out</a>
+		{/if}
+
+		<!-- cart -->
 		<div class="slide {$navigationActive ? 'is-active' : ''}">
-			<!--  -->
 			<div class="header">
 				<div class="flex">
 					<button
